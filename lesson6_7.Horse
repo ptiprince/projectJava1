@@ -1,0 +1,38 @@
+package Java1Lesson6HW;
+
+import Java1Lesson6HW.animals.Animal;
+import Java1Lesson6HW.Bowl;
+
+public class Horse extends Animal {
+    public static int horseCount;
+    protected int appetite;
+    protected boolean bellyful;
+    //static int idHorse;
+   // static int horseCount = 1;
+
+    //Created just with training purpose. The same - protected in Animal used for training purpose
+    public Horse(String name, String color, int age, int maxSwimDistance, int maxRunDistance, int appetite) {
+        super(name, color, age, appetite);
+        this.maxSwimDistance = maxSwimDistance;
+        this.maxRunDistance = maxRunDistance;
+        this.bellyful = false;
+       horseCount++;
+    }
+    @Override
+    public void info(){
+        System.out.print("Horse: ");
+        super.info();
+    }
+    @Override
+    public void eat(Bowl bowl) {
+        bowl.decreaseFood(appetite);
+        bellyful = true;
+        System.out.println(name + " ate from the bowl. It is " + bellyful + " that " + name + " is bellyful now.");
+    }
+    public void race(){
+        System.out.println("Horse is training for race!");
+    }
+    public void displayId(){
+        System.out.println("Total number of horses " + horseCount);
+    }
+}
