@@ -1,0 +1,36 @@
+package Java1Lesson6HW.animals;
+
+import Java1Lesson6HW.animals.Animal;
+import Java1Lesson6HW.Bowl;
+
+public class Cat extends Animal {
+public static int catCount;
+    public int appetiteFull;
+    //private int idCat;
+     //static int catCount=1;
+
+
+    public Cat(String name, String color, int age, int maxSwimDistance, int maxRunDistance, int appetite) {
+        super(name, color, age, appetite);
+        this.maxSwimDistance = maxSwimDistance;
+        this.maxRunDistance = maxRunDistance;
+        this.bellyful = false;
+        catCount++;
+       // appetiteFull += appetite;
+    }
+    @Override
+ public void eat(Bowl bowl) {
+       if (bowl.decreaseFood(appetite)) {
+           bellyful = true;
+           System.out.println(name + " ate from the bowl. It is " + bellyful + " that " + name + " is bellyful now.");
+       } else System.out.println("There is not enough food in the bowl");
+ }
+   // public void isEnoughFood(){
+    //    for (int i=0; i<cats.length; i++)
+     //       appetiteFull+= cats[i].appetite;
+      //  System.out.println("Daily amount of food is " + appetiteFull);
+   // } I wanted to evaluate daily mount of food and use it to increase the bowl. But I did smth wrong(
+    public void displayId(){
+            System.out.println("Total number of cats " + catCount);
+        }
+}
