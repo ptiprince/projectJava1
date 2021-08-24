@@ -1,0 +1,45 @@
+package Java1Lesson5HW;
+
+public class Employee {
+    private String lastName;
+    private String firstName;
+    private String position;
+    private String email;
+    private String cell;
+    private int paycheck;
+    private int age;
+
+    public String getLastName(){
+        return lastName;}
+    public String getFirstName(){
+        return firstName;}
+    public String getPosition(){ return position; }
+    public String getEmail(){return email;}
+    public String getCell() {return cell;}
+    public int getPaycheck() {return paycheck;}
+    public int getAge() {
+        return age;}
+    public void setAge(int age) {
+        if (age >= 16 && age <= 75) {
+            this.age = age;
+        } else {
+            System.out.println("Wrong age entered!");}
+    }
+
+ public Employee(String lastName, String firstName, String position, String email, String cell, int paycheck, int age){
+     this.firstName = firstName;
+     this.lastName = lastName;
+     this.position = position;
+     this.email = email;
+     this.cell = cell;
+     this.paycheck = paycheck;
+     this.age = age;
+ }
+
+    public void info() {
+        System.out.println(lastName + " " + firstName + " " + email + " " + cell + " " + age); //I want to hide Paycheck in order not to show it
+    }
+    public void paycheck(){
+        System.out.println(lastName + " " + firstName + " " + position + " " + paycheck);
+    }
+}

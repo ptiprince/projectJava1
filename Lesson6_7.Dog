@@ -1,0 +1,31 @@
+package Java1Lesson6HW.animals;
+import Java1Lesson6HW.Bowl;
+
+public class Dog extends Animal {
+    public static int dogCount;
+    private int tailLength;
+    protected int appetite;
+    protected boolean bellyful;
+
+    public Dog(String name, String color, int age, int maxSwimDistance, int maxRunDistance, int tailLength, int appetite) {
+        super(name, color, age, appetite);
+        this.maxSwimDistance = maxSwimDistance;
+        this.maxRunDistance = maxRunDistance;
+        this.tailLength = tailLength;
+        this.bellyful = false;
+       dogCount++;
+    }
+        @Override
+        public String toString () {
+            return "Dog: " + name + " " + age + " years, " + "tail length " + tailLength;
+        }
+        @Override
+        public void eat(Bowl bowl) {
+            bowl.decreaseFood(appetite);
+            bellyful = true;
+            System.out.println(name + " ate from the bowl. It is " + bellyful + " that " + name + " is bellyful now.");
+        }
+    public void displayId(){
+        System.out.println("Total number of dogs " + dogCount);
+    }
+}
