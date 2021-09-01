@@ -15,6 +15,29 @@ public class Dog extends Animal {
         this.bellyful = false;
        dogCount++;
     }
+    @Override
+    public void swim(int swimDistance) {
+        if (maxSwimDistance == 0) {
+            System.out.println(name + " can't swim!");
+            return;
+        }
+        if (swimDistance == maxSwimDistance) {
+            System.out.println(name + " successfully swam the distance");
+        } else if  (swimDistance >= maxSwimDistance) {
+            System.out.println(name + " swam only " + maxSwimDistance);
+        } else {
+            System.out.println(name + " can swim more");
+        }
+    }
+    @Override
+    public void run(int runDistance) {
+        if (runDistance == maxRunDistance) {
+            System.out.println(name + " successfully ran the distance");
+        } else if (runDistance >= maxRunDistance) {
+            System.out.println(name + " ran only " + maxRunDistance);
+        } else
+            System.out.println(name + " can run more!!");
+    }
         @Override
         public String toString () {
             return "Dog: " + name + " " + age + " years, " + "tail length " + tailLength;
@@ -29,3 +52,5 @@ public class Dog extends Animal {
         System.out.println("Total number of dogs " + dogCount);
     }
 }
+
+
