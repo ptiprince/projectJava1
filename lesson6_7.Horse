@@ -24,6 +24,29 @@ public class Horse extends Animal {
         super.info();
     }
     @Override
+    public void swim(int swimDistance) {
+        if (maxSwimDistance == 0) {
+            System.out.println(name + " can't swim!");
+            return;
+        }
+        if (swimDistance == maxSwimDistance) {
+            System.out.println(name + " successfully swam the distance");
+        } else if  (swimDistance >= maxSwimDistance) {
+            System.out.println(name + " swam only " + maxSwimDistance);
+        } else {
+            System.out.println(name + " can swim more");
+        }
+    }
+    @Override
+    public void run(int runDistance) {
+        if (runDistance == maxRunDistance) {
+            System.out.println(name + " successfully ran the distance");
+        } else if (runDistance >= maxRunDistance) {
+            System.out.println(name + " ran only " + maxRunDistance);
+        } else
+            System.out.println(name + " can run more!!");
+    }
+    @Override
     public void eat(Bowl bowl) {
         bowl.decreaseFood(appetite);
         bellyful = true;
