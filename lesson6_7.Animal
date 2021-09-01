@@ -23,27 +23,9 @@ public abstract class Animal {
     public void info(){
         System.out.println(name + " is " + color + " and he is " + age + ". It is " + bellyful + " that he is bellyful.");
     }
-    public void swim(int swimDistance) {
-        if (maxSwimDistance == 0) {
-            System.out.println(name + " can't swim!");
-            return;
-        }
-        if (swimDistance == maxSwimDistance) {
-            System.out.println(name + " successfully swam the distance");
-        } else if  (swimDistance >= maxSwimDistance) {
-            System.out.println(name + " swam only " + maxSwimDistance);
-        } else {
-            System.out.println(name + " can swim more");
-        }
-    }
-    public void run(int runDistance) {
-        if (runDistance == maxRunDistance) {
-            System.out.println(name + " successfully ran the distance");
-        } else if (runDistance >= maxRunDistance) {
-            System.out.println(name + " ran only " + maxRunDistance);
-        } else
-            System.out.println(name + " can run more!!");
-    }
+    public abstract void swim(int swimDistance);
+
+    public abstract void run(int runDistance);
     public abstract void eat(Bowl bowl);
     public abstract void displayId();
 }
