@@ -25,6 +25,29 @@ public static int catCount;
            System.out.println(name + " ate from the bowl. It is " + bellyful + " that " + name + " is bellyful now.");
        } else System.out.println("There is not enough food in the bowl");
  }
+ @Override
+ public void swim(int swimDistance) {
+     if (maxSwimDistance == 0) {
+         System.out.println(name + " can't swim!");
+         return;
+     }
+     if (swimDistance == maxSwimDistance) {
+         System.out.println(name + " successfully swam the distance");
+     } else if  (swimDistance >= maxSwimDistance) {
+         System.out.println(name + " swam only " + maxSwimDistance);
+     } else {
+         System.out.println(name + " can swim more");
+     }
+ }
+ @Override
+ public void run(int runDistance) {
+     if (runDistance == maxRunDistance) {
+         System.out.println(name + " successfully ran the distance");
+     } else if (runDistance >= maxRunDistance) {
+         System.out.println(name + " ran only " + maxRunDistance);
+     } else
+         System.out.println(name + " can run more!!");
+ }
    // public void isEnoughFood(){
     //    for (int i=0; i<cats.length; i++)
      //       appetiteFull+= cats[i].appetite;
